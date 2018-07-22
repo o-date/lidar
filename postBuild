@@ -9,5 +9,5 @@ wget http://lastools.org/download/LAStools.zip
 unzip LAStools.zip
 cd LAStools
 make
-sudo cp bin/laszip /usr/local/bin
-sudo ln -s /usr/local/bin/laszip /usr/local/bin/laszip-cli
+cp bin/laszip /usr/local/bin
+ln -s /usr/local/bin/laszip /usr/local/bin/laszip-cli
