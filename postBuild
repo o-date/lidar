@@ -1,4 +1,17 @@
-git clone https://github.com/LASzip/LASzip.git
-./configure
-make
-sudo make install
+cd /opt/source
+wget http://download.osgeo.org/laszip/laszip-2.1.0.tar.gz
+tar xvfz laszip-2.1.0.tar.gz
+cd laszip-2.1.0
+mkdir build
+mkdir cmake_build
+cd cmake_build
+# run cmake
+cmake .. -DCMAKE_INSTALL_PREFIX=/opt/source/laszip-2.1.0/build
+# compile
+make -j$threads
+# install into build dir
+make install
+### add to /opt/source/scripts/export_paths.sh (see Preliminaries)
+### then run: 'source export_paths.sh' to update these environment paths
+export LD_LIBRARY_PATH="/opt/source/laszip-2.1.0/build/lib:$LD_LIBRARY_PATH"
+export PATH="/opt/source/laszip-2.1.0/build/bin:$PATH"
