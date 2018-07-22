@@ -1,6 +1,4 @@
 git clone https://github.com/LASzip/LASzip.git
-git tag #List tags
-git checkout tags/2.0.2
 ./configure
 make
 sudo make install
